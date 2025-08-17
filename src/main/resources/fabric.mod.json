@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "titlescreencleaner",
+	"version": "${version}",
+	"name": "Title Screen Cleaner",
+	"description": "Cleans up the Minecraft title screen from unnecessary buttons and texts",
+	"authors": [
+		"KAkos1220"
+	],
+	"contact": {
+		"homepage": "modrinth",
+		"sources": "",
+		"issues": ""
+	},
+	"license": "MIT",
+	"icon": "assets/titlescreencleaner/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.kakos1220.titlescreencleaner.TitleScreenCleaner"
+		]
+	},
+	"mixins": [
+		"titlescreencleaner.mixins.json"
+	],
+	"depends": {
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

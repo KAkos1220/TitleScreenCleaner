@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "net.kakos1220.titlescreencleaner.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"TitleScreenMixin",
+		"SplashTextRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
