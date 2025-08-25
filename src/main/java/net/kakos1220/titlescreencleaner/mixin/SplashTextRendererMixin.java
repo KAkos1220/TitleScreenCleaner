@@ -13,7 +13,7 @@ public class SplashTextRendererMixin {
      * @reason Removes SplashText rendering entirely
      */
     @Overwrite
-    public void render(DrawContext context, int screenWidth, TextRenderer textRenderer, float alpha) {
+    public void render(DrawContext context, int screenWidth, TextRenderer textRenderer, int alpha) {
 
     }
 }

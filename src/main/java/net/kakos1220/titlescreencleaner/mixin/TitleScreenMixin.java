@@ -53,9 +53,10 @@ public class TitleScreenMixin {
             method = "render(Lnet/minecraft/client/gui/DrawContext;IIF)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Ljava/lang/String;III)V"
+                    target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Ljava/lang/String;III)I"
             )
     )
-    private void removeVersionText(DrawContext context, TextRenderer textRenderer, String text, int x, int y, int color) {
+    private int removeVersionText(DrawContext context, TextRenderer textRenderer, String text, int x, int y, int color) {
+        return 0;
     }
 }
