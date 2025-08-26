@@ -1,4 +1,5 @@
 # *TitleScreen Cleaner*
-This minimalist mod cleans up the TitleScreen from unnecessary buttons and texts. \
-[Fabric API](https://modrinth.com/mod/fabric-api) is required.
+This minimalist mod cleans up the TitleScreen from unnecessary buttons and texts.
 <img width="2478" height="600" alt="banner" src="https://github.com/user-attachments/assets/bb909dd2-c7be-449b-865a-465eff124aa5" />
+[Fabric API](https://modrinth.com/mod/fabric-api) is required. \
+The mod works in 1.21+, and I have no plans to make it available for earlier versions.
