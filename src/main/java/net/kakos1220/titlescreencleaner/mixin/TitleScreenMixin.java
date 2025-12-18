@@ -2,10 +2,8 @@ package net.kakos1220.titlescreencleaner.mixin;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.screen.TitleScreen;
-import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.gui.screens.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,11 +17,11 @@ public class TitleScreenMixin {
             method = "init",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/screen/TitleScreen;addDrawableChild(Lnet/minecraft/client/gui/Element;)Lnet/minecraft/client/gui/Element;",
+                    target = "Lnet/minecraft/client/gui/screens/TitleScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;",
                     ordinal = 0
             )
     )
-    private Element removeLanguageButton(TitleScreen instance, Element element) {
+    private GuiEventListener removeLanguageButton(TitleScreen instance, GuiEventListener element) {
         return element;
     }
 
@@ -31,11 +29,11 @@ public class TitleScreenMixin {
             method = "init",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/screen/TitleScreen;addDrawableChild(Lnet/minecraft/client/gui/Element;)Lnet/minecraft/client/gui/Element;",
+                    target = "Lnet/minecraft/client/gui/screens/TitleScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;",
                     ordinal = 3
             )
     )
-    private Element removeAccessibilityButton(TitleScreen instance, Element element) {
+    private GuiEventListener removeAccessibilityButton(TitleScreen instance, GuiEventListener element) {
         return element;
     }
 
@@ -43,19 +41,19 @@ public class TitleScreenMixin {
             method = "init",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/screen/TitleScreen;addDrawableChild(Lnet/minecraft/client/gui/Element;)Lnet/minecraft/client/gui/Element;",
+                    target = "Lnet/minecraft/client/gui/screens/TitleScreen;addRenderableWidget(Lnet/minecraft/client/gui/components/events/GuiEventListener;)Lnet/minecraft/client/gui/components/events/GuiEventListener;",
                     ordinal = 4
             )
     )
-    private Element removeCopyrightText(TitleScreen instance, Element element) {
+    private GuiEventListener removeCopyrightText(TitleScreen instance, GuiEventListener element) {
         return element;
     }
 
     @Inject(
-            method = "render(Lnet/minecraft/client/gui/DrawContext;IIF)V",
+            method = "render(Lnet/minecraft/client/gui/GuiGraphics;IIF)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Ljava/lang/String;III)V"
+                    target = "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V"
             ),
             cancellable = true
     )

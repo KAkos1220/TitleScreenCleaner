@@ -1,19 +1,19 @@
 package net.kakos1220.titlescreencleaner.mixin;
 
-import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.SplashTextRenderer;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.SplashRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
-@Mixin(SplashTextRenderer.class)
+@Mixin(SplashRenderer.class)
 public class SplashTextRendererMixin {
     /**
      * @author KAkos1220
      * @reason Removes SplashText rendering entirely
      */
     @Overwrite
-    public void render(DrawContext context, int screenWidth, TextRenderer textRenderer, float alpha) {
+    public void render(GuiGraphics context, int screenWidth, Font textRenderer, float alpha) {
 
     }
 }
