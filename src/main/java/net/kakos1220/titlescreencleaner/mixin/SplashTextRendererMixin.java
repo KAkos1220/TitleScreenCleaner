@@ -1,7 +1,7 @@
 package net.kakos1220.titlescreencleaner.mixin;
 
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.SplashRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -13,7 +13,7 @@ public class SplashTextRendererMixin {
      * @reason Removes SplashText rendering entirely
      */
     @Overwrite
-    public void render(GuiGraphics context, int screenWidth, Font textRenderer, float alpha) {
+    public void extractRenderState(GuiGraphicsExtractor context, int screenWidth, Font textRenderer, float alpha) {
 
     }
 }
