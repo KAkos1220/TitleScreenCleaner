@@ -14,7 +14,7 @@
 	},
 	"license": "MIT",
 	"icon": "assets/titlescreencleaner/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
 			"net.kakos1220.titlescreencleaner.TitleScreenCleaner"
