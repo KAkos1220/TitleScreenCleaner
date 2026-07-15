@@ -58,6 +58,15 @@ jar {
 	}
 }
 
+loom {
+	decompilers {
+		vineflower {
+			memory = 8192
+			maxThreads = 8
+		}
+	}
+}
+
 // configure the maven publication
 publishing {
 	publications {
