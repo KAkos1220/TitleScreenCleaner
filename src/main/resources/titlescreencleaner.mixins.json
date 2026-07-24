@@ -6,7 +6,7 @@
 		"TitleScreenMixin",
 		"SplashTextRendererMixin"
 	],
-	"priority": 2000,
+	"priority": 1000,
 	"injectors": {
 		"defaultRequire": 1
 	},
