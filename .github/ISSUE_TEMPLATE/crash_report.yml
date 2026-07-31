@@ -1,0 +1,42 @@
+name: Crash Report
+description: Use this if the client crashes because of an unsupported mod.
+title: "[Crash]: "
+labels: ["Crash", "The client crashed"]
+body:
+  - type: input
+    id: mc-version
+    attributes:
+      label: "Minecraft version:"
+      placeholder: "e.g. 26.2"
+    validations:
+      required: true
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: "TitleScreenCleaner's version:"
+      placeholder: "e.g. v1.4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: mod-list
+    attributes:
+      label: "List all mods:"
+      description: List (or screenshot) all the mods found in %appdata%/.minecraft/mods
+    validations:
+      required: true
+
+  - type: input
+    id: conflicting-mod
+    attributes:
+      label: The conflicting mod (leave blank if unknown)
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs:"
+      description: Paste or attach the crash logs from %appdata%/.minecraft/logs/latest.log
+      render: shell
+    validations:
+      required: true
