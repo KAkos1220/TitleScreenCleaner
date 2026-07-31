@@ -2,6 +2,7 @@ name: Crash Report
 description: Use this if the client crashes because of an unsupported mod.
 title: "[Crash]: "
 labels: ["Crash", "The client crashed"]
+assignees: ["KAkos1220"]
 body:
   - type: input
     id: mc-version
@@ -30,13 +31,14 @@ body:
   - type: input
     id: conflicting-mod
     attributes:
-      label: The conflicting mod (leave blank if unknown)
+      label: "The conflicting mod:"
+      description: Leave blank if unknown
 
   - type: textarea
     id: logs
     attributes:
       label: "Logs:"
-      description: Paste or attach the crash logs from %appdata%/.minecraft/logs/latest.log
+      description: Paste the crash logs from %appdata%/.minecraft/logs/latest.log
       render: shell
     validations:
       required: true
