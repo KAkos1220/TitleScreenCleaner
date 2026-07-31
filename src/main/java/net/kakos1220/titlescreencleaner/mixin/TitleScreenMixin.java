@@ -3,6 +3,7 @@ package net.kakos1220.titlescreencleaner.mixin;
 import com.mojang.realmsclient.gui.screens.RealmsNotificationsScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.kakos1220.titlescreencleaner.TitleScreenCleaner;
 import net.minecraft.client.gui.components.*;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.TitleScreen;
@@ -10,6 +11,7 @@ import net.minecraft.client.gui.screens.friends.FriendsOverlayScreen;
 import net.minecraft.client.gui.screens.options.OnlineOptionsScreen;
 import net.minecraft.client.gui.screens.options.OptionsScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -91,6 +93,15 @@ public class TitleScreenMixin extends Screen {
         if (this.realmsNotificationsEnabled()) {
             this.realmsNotificationsScreen.init(this.width, this.height);
         }
+
+
+        SpriteIconButton dummy =  SpriteIconButton.builder(Component.empty(), button -> {}, true)
+                .sprite(Identifier.fromNamespaceAndPath(TitleScreenCleaner.MOD_ID,"widget/blank"), 0, 0)
+                .size(0, 0)
+                .build();
+
+        dummy.setPosition(0,0);
+        dummy.setPosition(0,0);
     }
 
     @Inject(
