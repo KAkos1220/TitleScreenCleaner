@@ -73,7 +73,7 @@ public class TitleScreenMixin extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.translatable("menu.options"),
-                                button -> this.minecraft.gui.setScreen(new OptionsScreen(this, this.minecraft.options, false)))
+                                button -> this.minecraft.gui.setScreen(new OptionsScreen(this, this.minecraft.options)))
                         .bounds(this.width / 2 - 100, topPos, 100 - (totalWidth / 2 + 4), 20)
                         .build()
         );
